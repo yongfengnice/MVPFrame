@@ -27,6 +27,12 @@ public class ToastActivity extends BaseActivity<ToastPresenter> {
         initView();
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putString("test", "test");//重写onSaveInstanceState的使用测试
+        super.onSaveInstanceState(outState);
+    }
+
     public void showText(View view) {
         mPresenter.showText();//将业务交给Presenter处理
     }
